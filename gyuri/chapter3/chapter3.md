@@ -5,7 +5,7 @@
 훅을 왜 사용하는데?
 
 - 클래스형 컴포넌트에서만 가능했던 state, ref 등 리액트의 핵심적인 기능을 함수에서도 가능하게 만들기 위해
-- 클래스형 컴포넌트보다 간 결하게 작성할 수 있어서
+- 클래스형 컴포넌트보다 간결하게 작성할 수 있어서
 
 ### useState
 
@@ -13,6 +13,7 @@
 - 반환값: 배열
   - 첫번째 원소: state 값 자체
   - 두번째 원소: setState 함수, state 값을 변경 할 수 있다.
+  - [setState](https://kyounghwan01.github.io/blog/React/React18/flushsync/#%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF-%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5)
 
 ```typescript
 const [state, setstate] = useState(initialState);
@@ -84,7 +85,7 @@ Preact에서 useState 구현 [링크](https://github.com/preactjs/preact/blob/d3
 ### useEffect
 
 - useEffect는 두 개의 인수를 받는데, 첫 번째는 콜백, 두 번째는 의존성 배열이다. 두 번째 의존성 배열의 값이 변경되면 첫 번째 인수인 콜백을 실행한다.
-- useEffect는 클린업 함수를 반환할 수 있는데, 이 클린업 함수는 컴포넌트가 언마운트될 때 실행된다.
+- useEffect는 클린업 함수를 반환할 수 있는데, 이 클린업 함수는 컴포넌트가 [리랜더링](https://react.dev/reference/react/useEffect#my-cleanup-logic-runs-even-though-my-component-didnt-unmount)될 때 실행된다.
 
 Q. useEffect는 어떻게 의존성 배열이 변경된 것을 알고 실행될까?
 
@@ -106,7 +107,7 @@ A.
 
 #### 의존성 배열
 
-- 아무런 값도 넘겨주지 않는다면 이때는 의존성을 비교 할 필요 없이 렌더링할 때마다 실행이 필요하다고 판단해 렌더링이 발생할 때마다 실행된다.
+- 아무런 값도 넘겨주지 않는다면 이때는 의존성을 비교할 필요 없이 렌더링할 때마다 실행이 필요하다고 판단해 렌더링이 발생할 때마다 실행된다.
 
 Q. 의존성 배열이 없는 useEffect가 매 렌더링마다 실행된다면 그냥 useEffect 없이 써도 되는 게 아닐까?
 
@@ -261,11 +262,12 @@ const Context = createContext<{ hello: string } | undefined>()
 function ParentComponent() { return (
 
 <>
-〈Context.Provider value={{ hello: 'react' }}>
+<Context.Provider value={{ hello: 'react' }}>
 
 <Context.Provider value={{ hello: 'javascript' }}> <ChildComponent />
 
-</C에text.Provider> </Context.Provider>
+</Context.Provider>
+</Context.Provider>
 
 </>
 

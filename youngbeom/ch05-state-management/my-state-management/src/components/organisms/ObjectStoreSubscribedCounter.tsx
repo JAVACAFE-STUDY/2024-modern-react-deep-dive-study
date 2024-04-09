@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 import { store } from './ObjectStore'
 import { useSubscription } from 'use-subscription'
 
+/** @deprecated 사용해야 될 상황이 생기면 use-sync-external-store를 사용 */
+// You may now migrate to use-sync-external-store directly instead, which has the same API as React.useSyncExternalStore. The use-subscription package is now a thin wrapper over use-sync-external-store and will not be updated further.
 export function ObjectStoreSubscribedCounter() {
     const subscription = useMemo(
         () => ({

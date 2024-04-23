@@ -6,12 +6,17 @@
 JSX의 설계 목적 은 다양한 트랜스파일러에서 다양한 속성을 가진 트리 구조를 토큰화해 ECMAScript로 변환하는 데 초점 을 두고 있다.
 조금 더 쉽게 이야기하자면JSX 내부에 트리 구조로 표현하고 싶은 다양한 것들을 작성해 두고，이 JSX를 트랜스파일이라는 과정을 거쳐 자바스크립트(ECMAScript)가 이해할 수 있는 코드로 변 경하는 것이 목표
 
+A.A 형태는 오브젝트 내부 프로퍼티에 접근할 떄 사용할 수도 있다.
+
 ### 1-1. JSX의 정의
 
 > JSXElement, JSXAttributes, JSXChildren, JSXStrings 로 크게 구성되어 있다.
 
+JSXElementName 유니코드로 되어있어서
+JSX 공식문서
+
 JSX는 어떻게 자바스크립트에서 변환될까?
-JSX를 변환하는 `@babel/plugin- transform-react-jsx` 로 변환해보면 다음과 같은 특징을 알 수 있다.
+JSX를 변환하는 `@babel/plugin-  transform-react-jsx` 로 변환해보면 다음과 같은 특징을 알 수 있다.
 
 - JSXElement를 첫 번째 인수로 선언해 요소를 정의한다.
 - 옵셔널인 JSXChildren, JSXAttributes, JSXStrings는 이후 인수로 넘겨주어 처리한다.

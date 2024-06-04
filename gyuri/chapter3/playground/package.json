@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aws-sdk": "^2.1586.0",
     "preact": "^10.19.6"
   },
   "devDependencies": {

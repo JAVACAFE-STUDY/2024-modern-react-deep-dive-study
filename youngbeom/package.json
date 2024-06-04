@@ -1,0 +1,24 @@
+{
+  "name": "youngbeom",
+  "version": "1.0.0",
+  "description": "## 출판사 예제 코드",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/use-subscription": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "use-subscription": "^1.8.0"
+  }
+}
